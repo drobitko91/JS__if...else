@@ -228,16 +228,38 @@ function tenNumbersStat() {
 
 // task 4
 
+function getDay(index) {
+    switch(index) {
+        case 1:
+            return 'Monday';
+        case 2:
+            return 'Tuesday';
+        case 3:
+            return 'Wednsday';
+        case 4:
+            return 'Thursday';
+        case 5:
+            return 'Friday';
+        case 6:
+            return 'Saturday';
+        case 7:
+            return 'Sunday';
+    }
+}
+
 function daysOfTheWeek() {
     
-    
     for (let i = 1; i <= 7; i++) {
-        const confirmDay = confirm('Today is Monday. Do you want to know what day is next?')
-        console.log(confirmDay);
+        const confirmDay = confirm(`It is ${getDay(i)}. Do you want to know what day is next?`)
+        if (confirmDay && i === 7) {
+            i = 0
+        }
+        
         if (!confirmDay) {
             alert('Have a nice day!');
             return
-        }
+        };
     }
 }
 daysOfTheWeek();
+
